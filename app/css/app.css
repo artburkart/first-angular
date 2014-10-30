@@ -1,0 +1,44 @@
+/* app css stylesheet */
+
+body {
+  margin-top: 20px;
+  background: thistle;
+}
+footer {
+  margin-top: 20px;
+}
+.box {
+    height: 10em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.box > .box-content {
+    font-size: 5em;
+    border: solid thistle 1px;
+    border-radius: 10px;
+    height: 90%;
+    cursor: pointer;
+    background: white;
+}
+.box > .box-content.ui-draggable-dragging {
+  background: mediumorchid;
+}
+.box > .box-content[data-drag="false"] {
+  color: white;
+  background: limegreen;
+  cursor: default;
+}
+.box > .box-content[data-selected="true"] {
+  background: mediumorchid;
+}
+.box > .box-content > p {
+  margin-top: 10px;
+}
+.btn-xl {
+padding: 18px 28px;
+font-size: 3em;
+line-height: normal;
+-webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+        border-radius: 8px;
+}

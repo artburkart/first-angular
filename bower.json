@@ -1,0 +1,26 @@
+{
+  "name": "invoke-challenge",
+  "description": "My first AngularJS project",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "bootstrap": "~3.2.0",
+    "angular-dragdrop": "~1.0.8",
+    "fontawesome": "~4.2.0",
+    "lodash": "~2.4.1",
+    "jquery-ui": "~1.11.2",
+    "jquery": "~2.1.1"
+  },
+  "authors": [
+    "Arthur Burkart <artburkart@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components"
+  ]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="invokeChallenge" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="invokeChallenge" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="invokeChallenge" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="invokeChallenge" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Invoke Challenge</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css"> -->
+  <!-- Production use: -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <!-- <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script> -->
+</head>
+<body>
+  <!-- This was greatly modeled after the examples in http://bit.ly/13lzcQW -->
+  <div ng-controller="GameCtrl as GameCtrl">
+    <div class='container'>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="box col-xs-4"
+              ng-repeat="box in boxes"
+              ng-keydown="keyInput($event, $index)"
+              data-drop="true"
+              ng-model='boxes'
+              jqyoui-droppable="{index: {{$index}}, onDrop:'GameCtrl.dropCallback(box.title, $index)'}">
+              <div class="box-content text-center"
+                data-selected="{{box.selected}}"
+                data-drag="{{box.drag}}"
+                data-id="{{box.id}}"
+                data-jqyoui-options="{revert: 'invalid'}"
+                ng-model="boxes"
+                jqyoui-draggable="{index: {{$index}}}"
+                tabindex="0">
+                <p>{{box.title}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center col-xs-12 col-md-6 col-md-offset-3">
+        <button type="button" class="btn btn-primary btn-xl" ng-click="resetBoxes(secretSentence)">Refresh&nbsp;<i class="fa fa-refresh"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <footer><div class="text-center col-xs-12">Code on <a href="https://github.com/artburkart/first-angular">GitHub</a></div></footer>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- In production use: -->
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/angular.dragdrop/1.07/angular-dragdrop.min.js"></script>
+
+<!--   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-dragdrop/src/angular-dragdrop.min.js"></script> -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
